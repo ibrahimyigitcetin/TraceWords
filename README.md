@@ -22,10 +22,16 @@
 - Python 3.x  
 - `pandas` kütüphanesi
 
-Kurulum:
+Pandas'ı kurun:
 
 ```bash
 pip install pandas
+```
+Repo'yu klonlayın:
+
+```bash
+git clone https://github.com/ibrahimyigitcetin/TraceWords.git
+cd TraceWords
 ```
 
 ---
