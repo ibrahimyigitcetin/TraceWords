@@ -1,29 +1,28 @@
-2025-07-09 12:32:52,516 - INFO - Program başlatıldı.
-2025-07-09 12:32:52,519 - INFO - Program sona erdi.
-2025-07-09 12:34:20,005 - INFO - Program başlatıldı.
-2025-07-09 12:34:20,006 - INFO - Program sona erdi.
-2025-07-09 13:05:05,060 - INFO - Program başlatıldı.
-2025-07-09 13:05:05,062 - INFO - Taranan klasör: F:\TraceWords
-2025-07-09 13:05:05,066 - INFO - Tarama: report.txt
-2025-07-09 13:05:05,066 - INFO - Tarama: user_1.csv
-2025-07-09 13:05:05,068 - INFO - Tarama: user_1.txt
-2025-07-09 13:05:05,068 - INFO - Tarama: user_2.txt
-2025-07-09 13:05:05,068 - INFO - Tarama: user_3.txt
-2025-07-09 13:05:05,069 - INFO - Tarama: user_4.txt
-2025-07-09 13:05:05,069 - INFO - Tarama: user_passs.json
-2025-07-09 13:05:05,138 - INFO - Tarama tamamlandı. Dosya sayısı: 7, Süre: 0.08 saniye
-2025-07-09 13:05:05,162 - INFO - Rapor kaydedildi: F:\TraceWords\report1.txt
-2025-07-09 13:05:05,162 - INFO - Program sona erdi.
-2025-07-09 13:06:57,035 - INFO - Program başlatıldı.
-2025-07-09 13:06:57,036 - INFO - Taranan klasör: F:\TraceWords
-2025-07-09 13:06:57,038 - INFO - Tarama: report.txt
-2025-07-09 13:06:57,038 - INFO - Tarama: user_1.csv
-2025-07-09 13:06:57,039 - INFO - Tarama: user_1.txt
-2025-07-09 13:06:57,039 - INFO - Tarama: user_2.txt
-2025-07-09 13:06:57,040 - INFO - Tarama: user_3.txt
-2025-07-09 13:06:57,040 - INFO - Tarama: user_4.txt
-2025-07-09 13:06:57,041 - INFO - Tarama: user_passs.json
-2025-07-09 13:06:57,041 - INFO - Tarama: report1.txt
-2025-07-09 13:06:57,060 - INFO - Tarama tamamlandı. Dosya sayısı: 8, Süre: 0.02 saniye
-2025-07-09 13:07:02,917 - INFO - Rapor kaydedildi: F:\TraceWords\report1.txt
-2025-07-09 13:07:02,917 - INFO - Program sona erdi.
+2025-07-09 13:31:57,800 - INFO - Taranan klasör: F:\TraceWords
+2025-07-09 13:31:57,820 - INFO - Tarama tamamlandı. Dosya sayısı: 0, Süre: 0.02 saniye
+2025-07-09 13:31:57,831 - INFO - Rapor kaydedildi: F:\TraceWords\report.txt
+2025-07-09 13:31:57,831 - INFO - Program sona erdi.
+2025-07-09 13:40:02,935 - INFO - Program başlatıldı.
+2025-07-09 13:40:02,939 - INFO - Program sona erdi.
+2025-07-09 13:40:15,166 - INFO - Program başlatıldı.
+2025-07-09 13:40:17,421 - INFO - Taranan klasör: F:\TraceWords
+2025-07-09 13:40:17,422 - WARNING - Klasörde taranacak dosya bulunamadı.
+2025-07-09 13:40:17,435 - INFO - Rapor kaydedildi: F:\TraceWords\report.txt
+2025-07-09 13:40:17,436 - INFO - Program sona erdi.
+2025-07-09 15:33:16,152 - INFO - Program başlatıldı.
+2025-07-09 15:33:19,432 - INFO - Taranan klasör: F:\TraceWords
+2025-07-09 15:33:19,432 - WARNING - Klasörde taranacak dosya bulunamadı.
+2025-07-09 15:33:19,450 - INFO - Rapor kaydedildi: F:\TraceWords\report.txt
+2025-07-09 15:33:19,451 - INFO - Program sona erdi.
+2025-07-09 15:33:56,093 - INFO - Program başlatıldı.
+2025-07-09 15:33:57,752 - INFO - Taranan klasör: F:\TraceWords
+2025-07-09 15:33:57,752 - INFO - Tarama: report.txt
+2025-07-09 15:33:57,753 - INFO - Tarama: user_1.csv
+2025-07-09 15:33:57,753 - INFO - Tarama: user_1.txt
+2025-07-09 15:33:57,754 - INFO - Tarama: user_2.txt
+2025-07-09 15:33:57,755 - INFO - Tarama: user_3.txt
+2025-07-09 15:33:57,756 - INFO - Tarama: user_4.txt
+2025-07-09 15:33:57,756 - INFO - Tarama: user_passs.json
+2025-07-09 15:33:57,782 - INFO - Tarama tamamlandı. Dosya sayısı: 7, Süre: 0.03 saniye
+2025-07-09 15:34:25,026 - INFO - Rapor kaydedildi: F:\TraceWords\report.txt
+2025-07-09 15:34:25,026 - INFO - Program sona erdi.
