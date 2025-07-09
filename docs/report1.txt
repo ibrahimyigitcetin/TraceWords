@@ -1,0 +1,5 @@
+Dijital Anahtar Kelime Adli Taraması Aracı Raporu
+Tarih: 2025-07-09 13:07:02
+
+Dosya: user_2.txt (Son değiştirilme: Wed Jul  9 13:06:36 2025)
+  - pass: 1 eşleşme
