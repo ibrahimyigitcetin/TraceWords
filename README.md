@@ -25,7 +25,7 @@
 Pandas'ı kurun:
 
 ```bash
-pip install pandas
+pip install pandas tqdm
 ```
 Repo'yu klonlayın:
 
