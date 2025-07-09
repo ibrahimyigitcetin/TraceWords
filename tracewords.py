@@ -91,6 +91,11 @@ def search_keywords(directory, keywords, exact_match=False):
     ]
     file_count = len(files)
     
+    if not files:
+        print("Klasörde taranacak dosya (.txt, .json, .csv) bulunamadı.")
+        logging.warning("Klasörde taranacak dosya bulunamadı.")
+        return found, 0
+    
     with ThreadPoolExecutor() as executor:
         futures = [
             executor.submit(process_file, filepath, keywords, exact_match)
@@ -154,7 +159,7 @@ def parse_args():
     parser.add_argument(
         "-e", "--exact",
         action="store_true",
-        help="Tam kelime eşleşmesi"
+        help="Tam kelime eşleşmesi (varsayılan: False)"
     )
     parser.add_argument(
         "-o", "--output",
@@ -178,8 +183,15 @@ def main():
         logging.error("Anahtar kelime girilmedi.")
         return
     
+    # Tam eşleşme seçeneğini al
+    if args.exact:
+        exact_match = True
+    else:
+        match_type = input("Tam eşleşme (e/h): ").strip().lower()
+        exact_match = True if match_type == "e" else False
+    
     print("\nTarama yapılıyor...")
-    results, file_count = search_keywords(args.directory, keywords, args.exact)
+    results, file_count = search_keywords(args.directory, keywords, exact_match)
     save_report(results, args.output, args.directory)
 
 if __name__ == "__main__":
