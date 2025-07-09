@@ -1,0 +1,14 @@
+Dijital Anahtar Kelime Adli Taraması Aracı Raporu
+Tarih: 2025-07-09 15:34:25
+
+Dosya: user_1.csv (Son değiştirilme: Wed Jul  9 12:03:56 2025)
+  - pass: 1 eşleşme
+
+Dosya: user_1.txt (Son değiştirilme: Wed Jul  9 12:03:54 2025)
+  - pass: 1 eşleşme
+
+Dosya: user_2.txt (Son değiştirilme: Wed Jul  9 13:06:36 2025)
+  - pass: 1 eşleşme
+
+Dosya: user_passs.json (Son değiştirilme: Wed Jul  9 12:04:10 2025)
+  - pass: 1 eşleşme
