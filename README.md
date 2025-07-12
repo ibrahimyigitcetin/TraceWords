@@ -1,3 +1,12 @@
+<div align="center">
+  <img src="https://img.shields.io/github/languages/count/ibrahimyigitcetin/TraceWords?style=flat-square&color=blueviolet" alt="Language Count">
+  <img src="https://img.shields.io/github/languages/top/ibrahimyigitcetin/TraceWords?style=flat-square&color=1e90ff" alt="Top Language">
+  <img src="https://img.shields.io/github/last-commit/ibrahimyigitcetin/TraceWords?style=flat-square&color=ff69b4" alt="Last Commit">
+  <img src="https://img.shields.io/github/license/ibrahimyigitcetin/TraceWords?style=flat-square&color=yellow" alt="License">
+  <img src="https://img.shields.io/badge/Status-Active-green?style=flat-square" alt="Status">
+  <img src="https://img.shields.io/badge/Contributions-Welcome-brightgreen?style=flat-square" alt="Contributions">
+</div>
+
 # 🕵️‍♂️ TraceWords — Dijital Anahtar Kelime Adli Taraması Aracı
 
 **TraceWords**, `.txt`, `.json` ve `.csv` dosyalarını tarayarak belirli anahtar kelimelerin izini süren Python tabanlı bir adli bilişim analiz aracıdır. Dijital delil taraması, veri sızıntısı analizi veya duyarlı bilgi tespiti için kullanılabilir.
