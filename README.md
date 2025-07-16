@@ -124,18 +124,31 @@ Rapor kaydedildi: C:\Belgeler\ornek\sifre_raporu.txt
 
 ## 📝 Rapor Formatı
 
-Rapor, tarama sonuçlarını ve dosya bilgilerini içerir. Örnek:
+Rapor; tarama sonuçlarını, dosya bilgilerini ve rapor özetini içerir. Örnek:
 
 ```
 Dijital Anahtar Kelime Adli Taraması Aracı Raporu
-Tarih: 2025-07-09 17:19:45
+Tarih: 2025-07-16 15:33:14
 
-Dosya: logs.csv (Son değiştirilme: Wed Jul 09 10:15:30 2025)
-  - parola: 5 eşleşme
-  - şifre: 2 eşleşme
+Dosya: user_1.csv (Son değiştirilme: Wed Jul  9 12:03:56 2025)
+  - pass: 1 eşleşme
+  - Önizleme: password: askdlkşadss
 
-Dosya: notlar.txt (Son değiştirilme: Wed Jul 09 09:45:12 2025)
-  - giriş: 3 eşleşme
+Dosya: user_1.txt (Son değiştirilme: Wed Jul  9 12:03:54 2025)
+  - pass: 1 eşleşme
+  - Önizleme: password: askdlkşadss
+
+Dosya: user_2.txt (Son değiştirilme: Wed Jul  9 13:06:36 2025)
+  - pass: 1 eşleşme
+  - Önizleme: pass phrase: şklskladşşlsdaşksladşklsad
+
+Dosya: user_passs.json (Son değiştirilme: Wed Jul  9 12:04:10 2025)
+  - pass: 1 eşleşme
+  - Önizleme: {"user": "pass"}
+
+=== Rapor Özeti ===
+Toplam eşleşme sayısı: 4
+Taranan dosya sayısı: 4
 ```
 
 Eğer eşleşme bulunmazsa:
