@@ -61,6 +61,7 @@ def process_file(filepath, keywords, exact_match):
     logging.info(f"Tarama: {os.path.basename(filepath)}")
     content = read_file_content(filepath)
     matches = {}
+    preview_line = ""
     for keyword in keywords:
         keyword = keyword.lower().strip()
         if exact_match:
@@ -69,7 +70,14 @@ def process_file(filepath, keywords, exact_match):
         else:
             if keyword in content:
                 matches[keyword] = content.count(keyword)
-    return os.path.basename(filepath), matches
+        # Önizleme satırı için ilk eşleşmeyi bul
+        if keyword in content and not preview_line:
+            with open(filepath, "r", encoding="utf-8", errors="ignore") as file:
+                for line in file:
+                    if keyword in line.lower():
+                        preview_line = line.strip()
+                        break
+    return os.path.basename(filepath), matches, preview_line
 
 def search_keywords(directory, keywords, exact_match=False):
     """
@@ -102,9 +110,9 @@ def search_keywords(directory, keywords, exact_match=False):
             for filepath in files
         ]
         for future in tqdm(futures, desc="Dosyalar taranıyor", unit="dosya"):
-            filename, matches = future.result()
+            filename, matches, preview = future.result()
             if matches:
-                found[filename] = matches
+                found[filename] = {"matches": matches, "preview": preview}
     
     print(f"Taranan dosya sayısı: {file_count}")
     print(f"Tarama süresi: {time.time() - start_time:.2f} saniye")
@@ -128,11 +136,20 @@ def save_report(results, output_file, directory):
             report.write("Dijital Anahtar Kelime Adli Taraması Aracı Raporu\n")
             report.write(f"Tarih: {time.strftime('%Y-%m-%d %H:%M:%S')}\n\n")
             if results:
-                for file, matches in results.items():
+                total_matches = 0
+                for file, data in results.items():
+                    matches = data["matches"]
+                    preview = data["preview"]
                     report.write(f"Dosya: {file} (Son değiştirilme: {time.ctime(os.path.getmtime(os.path.join(directory, file)))})\n")
                     for keyword, count in matches.items():
                         report.write(f"  - {keyword}: {count} eşleşme\n")
+                        total_matches += count
+                    if preview:
+                        report.write(f"  - Önizleme: {preview}\n")
                     report.write("\n")
+                report.write("=== Rapor Özeti ===\n")
+                report.write(f"Toplam eşleşme sayısı: {total_matches}\n")
+                report.write(f"Taranan dosya sayısı: {len(results)}\n")
             else:
                 report.write("Hiçbir eşleşme bulunamadı.\n")
         print(f"Rapor kaydedildi: {os.path.abspath(full_path)}")
