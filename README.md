@@ -218,7 +218,7 @@ TraceWords tüm işlemleri `tracewords_log.txt` dosyasına kaydeder:
 
 ## 📄 Lisans
 
-Bu proje MIT lisansı altında dağıtılmaktadır. Detaylar için [LICENSE](LICENSE) dosyasını inceleyiniz.
+Bu proje MIT lisansı altında dağıtılmaktadır. Detaylar için [LICENSE.md](LICENSE.md) dosyasını inceleyiniz.
 
 ---
 
