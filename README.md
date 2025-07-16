@@ -196,12 +196,12 @@ TraceWords tüm işlemleri `tracewords_log.txt` dosyasına kaydeder:
 - Dijital adli bilişim standartları desteği
 - MD5 hash hesaplama özelliği
 - Gelişmiş bağlam çıkarma
-- Paralel işleme optimizasyonu
+- Regex pattern desteği
+- Recursive arama
 - Detaylı rapor formatı
 
 ### v2.x
-- Regex pattern desteği
-- Recursive arama
+- Paralel işleme optimizasyonu
 - CSV/JSON dosya desteği
 
 ### v1.x
