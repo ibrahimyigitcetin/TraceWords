@@ -1,2 +1,27 @@
-pandas==1.5.3
-tqdm==4.65.0
+TraceWords — Dijital Anahtar Kelime Adli Taraması Aracı
+Requirements file for Python dependencies
+
+Core data processing
+pandas>=1.5.0
+
+Progress bar for user feedback
+tqdm>=4.64.0
+
+Note: The following are part of Python standard library (no installation needed):
+- os
+- time
+- json
+- argparse
+- logging
+- hashlib
+- re
+- concurrent.futures
+- datetime
+
+Optional: For enhanced performance (uncomment if needed)
+numpy>=1.21.0
+
+Development dependencies (uncomment for development)
+pytest>=7.0.0
+black>=22.0.0
+flake8>=5.0.0
