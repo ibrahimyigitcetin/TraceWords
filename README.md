@@ -7,7 +7,7 @@
   <img src="https://img.shields.io/badge/Contributions-Welcome-brightgreen?style=flat-square" alt="Contributions">
 </div>
 
-# TraceWords
+# 🕵️‍♂️ TraceWords — Dijital Anahtar Kelime Adli Taraması Aracı
 
 🔍 **Dijital Anahtar Kelime Adli Taraması Aracı v3.0**
 
