@@ -1,0 +1,14 @@
+2025-07-16 16:10:34,168 - INFO - TraceWords programı başlatıldı.
+2025-07-16 16:10:40,753 - INFO - TraceWords analizi başlatıldı: F:\TraceWords
+2025-07-16 16:10:40,755 - INFO - Dijital kanıt analizi: tracewords.py
+2025-07-16 16:10:40,755 - INFO - Dijital kanıt analizi: user_1.csv
+2025-07-16 16:10:40,756 - INFO - Dijital kanıt analizi: user_1.txt
+2025-07-16 16:10:40,757 - INFO - Dijital kanıt analizi: user_2.txt
+2025-07-16 16:10:40,759 - INFO - Dijital kanıt analizi: user_3.txt
+2025-07-16 16:10:40,759 - INFO - Dijital kanıt analizi: user_4.txt
+2025-07-16 16:10:40,760 - INFO - Dijital kanıt analizi: user_passs.json
+2025-07-16 16:10:40,760 - INFO - Dijital kanıt analizi: requirements.txt
+2025-07-16 16:10:40,760 - INFO - Dijital kanıt analizi: tracewords.log
+2025-07-16 16:10:40,782 - INFO - TraceWords analizi tamamlandı. Dosya sayısı: 9, Süre: 0.03 saniye
+2025-07-16 16:10:40,801 - INFO - Siber adli bilişim raporu kaydedildi: F:\TraceWords\report.txt
+2025-07-16 16:10:40,804 - INFO - TraceWords programı sona erdi.
