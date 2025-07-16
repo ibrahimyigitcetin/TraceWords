@@ -220,4 +220,6 @@ TraceWords tüm işlemleri `tracewords_log.txt` dosyasına kaydeder:
 
 Bu proje MIT lisansı altında dağıtılmaktadır. Detaylar için [LICENSE](LICENSE) dosyasını inceleyiniz.
 
+---
+
 **TraceWords** - Dijital adli bilişim standartlarında anahtar kelime analizi aracı
