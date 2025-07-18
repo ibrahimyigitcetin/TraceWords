@@ -46,7 +46,7 @@ pip install pandas tqdm
 - `hashlib`: Hash hesaplama
 - `logging`: Loglama
 
-## 🚀 Kurulum
+## 🚀 Hızlı Kurulum
 
 1. Repository'yi klonlayın:
 ```bash
@@ -63,6 +63,55 @@ pip install -r requirements.txt
 ```bash
 python tracewords.py
 ```
+
+## Virtual Environment ile Kurulum (Opsiyonel - Önerilen)
+
+Virtual environment kullanımı zorunlu değildir ancak sistem temizliği için önerilir.
+
+**Windows:**
+```bash
+# Virtual environment oluştur
+python -m venv tracewords_env
+
+# Virtual environment'ı aktifleştir
+tracewords_env\Scripts\activate
+
+# Bağımlılıkları yükle
+pip install -r requirements.txt
+
+# TraceWords'ü çalıştır
+python tracewords.py /path/to/directory -k "password,admin,hack"
+
+# İşlem bittiğinde deaktif et
+deactivate
+```
+
+**Linux/macOS:**
+```bash
+# Virtual environment oluştur
+python3 -m venv tracewords_env
+
+# Virtual environment'ı aktifleştir
+source tracewords_env/bin/activate
+
+# Bağımlılıkları yükle
+pip install -r requirements.txt
+
+# TraceWords'ü çalıştır
+python tracewords.py /path/to/directory -k "password,admin,hack"
+
+# İşlem bittiğinde deaktif et
+deactivate
+```
+
+## Virtual Environment Kullanmanın Faydaları
+
+- **İzolasyon:** Sistem Python'unuza müdahale etmez
+- **Temizlik:** Proje bağımlılıkları ayrı tutulur  
+- **Güvenlik:** Paket çakışması riski ortadan kalkar
+- **Profesyonellik:** Endüstri standardı yaklaşım
+
+**Not:** TraceWords minimal bağımlılıklara sahip olduğu için venv olmadan da güvenle kullanılabilir.
 
 ## 💻 Kullanım
 
