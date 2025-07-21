@@ -7,9 +7,9 @@
   <img src="https://img.shields.io/badge/Contributions-Welcome-brightgreen?style=flat-square" alt="Contributions">
 </div>
 
-# TraceWords
+# TraceWords - GDPR/CCPA Uyumlu Dijital Anahtar Kelime Adli Taraması Aracı
 
-🔍 **GDPR/CCPA Uyumlu Dijital Adli Tarama Aracı v4.0**
+🔍 **GDPR/CCPA Uyumlu Dijital Dijital Anahtar Kelime Adli Taraması v4.0**
 
 TraceWords, veri gizliliği yasalarına uyumlu olarak tasarlanmış, dijital adli bilişim standartlarında anahtar kelime arama ve dijital kanıt toplama aracıdır. Güvenlik uzmanları, sistem yöneticileri ve dijital adli bilişim uzmanları için geliştirilmiştir.
 
