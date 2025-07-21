@@ -23,7 +23,7 @@ Note: The following are part of Python standard library (no installation needed)
 Optional: For enhanced performance (uncomment if needed)
 numpy>=1.21.0
 
-Development dependencies (uncomment for development)
+# Development dependencies (uncomment for development)
 pytest>=7.0.0
 black>=22.0.0
 flake8>=5.0.0
