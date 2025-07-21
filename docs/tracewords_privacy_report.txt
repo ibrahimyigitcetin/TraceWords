@@ -1,0 +1,246 @@
+================================================================================
+TRACEWORDS — GDPR/CCPA UYUMLU DİJİTAL ADLİ TARAMA RAPORU
+================================================================================
+TraceWords v4.0 - GDPR/CCPA Uyumlu Dijital Adli Tarama Aracı
+Analiz Tarihi: 2025-07-21 12:54:57
+Oturum ID: c09f5ada-c100-44a5-9267-0d571e42d098
+Aranan Terimler: pass
+Bulunan Dijital Kanıt Dosyası: 7
+Analiz Edilen Dizin: F:\TraceWords
+
+VERİ GİZLİLİĞİ VE UYUMLULUK BİLGİLERİ
+--------------------------------------------------
+PII Maskeleme Durumu: Aktif
+Veri Minimizasyonu: Aktif
+Audit Loglama: Aktif
+Sonuç Anonimleştirme: Pasif
+Veri Saklama Süresi: 90 gün
+Silinme Tarihi: 2025-10-19
+
+----------------------------------------------------------------------
+DİJİTAL KANIT DOSYASI: F:\TraceWords\tracewords.py
+----------------------------------------------------------------------
+Dosya Boyutu: 33,561 bytes
+Son Değiştirilme: 2025-07-21 12:47:48
+Oluşturulma Tarihi: 2025-07-09 12:04:44
+MD5 Hash (Bütünlük): 361efc75ffef70faf5076ed7a34d9922
+
+BULUNAN DİJİTAL KANITLAR:
+  🔍 pass: 3 eşleşme
+
+KANIT BAĞLAMLARI (PII MASKELENMİŞ):
+
+  [1] Satır 46:
+      Eşleşen: 'passport': r'\b[a-z][0-9]{8}\b',
+  Bağlam:
+          'tc_kimlik': r'\b[1-9][0-9]{10}\b',  # türk t.c. kimlik no
+          'iban': r'\b[a-z]{2}[0-9]{2}[a-z0-9]{4}[0-9]{7}([a-z0-9]?){0,16}\b',
+          'passport': r'\b[a-z][0-9]{8}\b',
+          'date_of_birth': r'\b(0[1-9]|[12][0-9]|3[01])[\/\-\.](0[1-9]|1[012])[\/\-\.]((19|20)\d\d)\b'
+      }
+
+  [2] Satır 460:
+      Eşleşen: 'passport': 'pasaport no',
+  Bağlam:
+                              'tc_kimlik': 't.c. kimlik no',
+                              'iban': 'iban no',
+                              'passport': 'pasaport no',
+                              'date_of_birth': 'doğum tarihi'
+                          }.get(pii_type, pii_type.upper())
+
+  [3] Satır 595:
+      Eşleşen: help="virgülle ayrılmış arama terimleri (örn: password,admin,hack)"
+  Bağlam:
+              "-k", "--keywords",
+              required=true,
+              help="virgülle ayrılmış arama terimleri (örn: password,admin,hack)"
+          )
+          parser.add_argument(
+
+======================================================================
+
+----------------------------------------------------------------------
+DİJİTAL KANIT DOSYASI: F:\TraceWords\user_1.csv
+----------------------------------------------------------------------
+Dosya Boyutu: 22 bytes
+Son Değiştirilme: 2025-07-09 12:03:56
+Oluşturulma Tarihi: 2025-07-09 12:04:44
+MD5 Hash (Bütünlük): 159b43daa6a5d84e4f70bb777ebc1ab9
+
+BULUNAN DİJİTAL KANITLAR:
+  🔍 pass: 1 eşleşme
+
+KANIT BAĞLAMLARI (PII MASKELENMİŞ):
+
+  [1] Satır 2:
+      Eşleşen: columns: [password: askdlkşadss]
+  Bağlam:
+      empty dataframe
+      columns: [password: askdlkşadss]
+      index: []
+
+======================================================================
+
+----------------------------------------------------------------------
+DİJİTAL KANIT DOSYASI: F:\TraceWords\user_1.txt
+----------------------------------------------------------------------
+Dosya Boyutu: 22 bytes
+Son Değiştirilme: 2025-07-09 12:03:54
+Oluşturulma Tarihi: 2025-07-09 12:04:44
+MD5 Hash (Bütünlük): 159b43daa6a5d84e4f70bb777ebc1ab9
+
+BULUNAN DİJİTAL KANITLAR:
+  🔍 pass: 1 eşleşme
+
+KANIT BAĞLAMLARI (PII MASKELENMİŞ):
+
+  [1] Satır 1:
+      Eşleşen: password: askdlkşadss
+  Bağlam:
+      password: askdlkşadss
+
+======================================================================
+
+----------------------------------------------------------------------
+DİJİTAL KANIT DOSYASI: F:\TraceWords\user_2.txt
+----------------------------------------------------------------------
+Dosya Boyutu: 44 bytes
+Son Değiştirilme: 2025-07-09 13:06:36
+Oluşturulma Tarihi: 2025-07-09 12:04:44
+MD5 Hash (Bütünlük): fb1d52e66ec73b02b7987fd8ff656355
+
+BULUNAN DİJİTAL KANITLAR:
+  🔍 pass: 1 eşleşme
+
+KANIT BAĞLAMLARI (PII MASKELENMİŞ):
+
+  [1] Satır 1:
+      Eşleşen: pass phrase: şklskladşşlsdaşksladşklsad
+  Bağlam:
+      pass phrase: şklskladşşlsdaşksladşklsad
+
+======================================================================
+
+----------------------------------------------------------------------
+DİJİTAL KANIT DOSYASI: F:\TraceWords\user_passs.json
+----------------------------------------------------------------------
+Dosya Boyutu: 16 bytes
+Son Değiştirilme: 2025-07-09 12:04:10
+Oluşturulma Tarihi: 2025-07-09 12:04:44
+MD5 Hash (Bütünlük): bfc55db5c5696303bc0deaa764865c14
+
+BULUNAN DİJİTAL KANITLAR:
+  🔍 pass: 1 eşleşme
+
+KANIT BAĞLAMLARI (PII MASKELENMİŞ):
+
+  [1] Satır 2:
+      Eşleşen: "user": "pass"
+  Bağlam:
+      {
+        "user": "pass"
+      }
+
+======================================================================
+
+----------------------------------------------------------------------
+DİJİTAL KANIT DOSYASI: F:\TraceWords\tracewords.log
+----------------------------------------------------------------------
+Dosya Boyutu: 1,491 bytes
+Son Değiştirilme: 2025-07-21 12:54:46
+Oluşturulma Tarihi: 2025-07-21 12:54:46
+MD5 Hash (Bütünlük): 855f22399bd43d0dd88aae3a3b96ffa8
+
+BULUNAN DİJİTAL KANITLAR:
+  🔍 pass: 2 eşleşme
+
+KANIT BAĞLAMLARI (PII MASKELENMİŞ):
+
+  [1] Satır 3:
+      Eşleşen: 2025-07-21 12:54:57,104 - info - session: c09f5ada-c100-44a5-9267-0d571e42d098 | action: analysis_parameters | resource: keywords: ['pass'], mode: partial | user: user | result: success
+  Bağlam:
+      2025-07-21 12:54:46,719 - info - tracewords v4.0 (gdpr/ccpa uyumlu) programı başlatıldı.
+      2025-07-21 12:54:50,533 - info - session: c09f5ada-c100-44a5-9267-0d571e42d098 | action: consent_granted | resource: data_processing | user: user | result: success
+      2025-07-21 12:54:57,104 - info - session: c09f5ada-c100-44a5-9267-0d571e42d098 | action: analysis_parameters | resource: keywords: ['pass'], mode: partial | user: user | result: success
+      2025-07-21 12:54:57,105 - info - tracewords analizi başlatıldı: f:\tracewords
+      2025-07-21 12:54:57,106 - info - session: c09f5ada-c100-44a5-9267-0d571e42d098 | action: analysis_started | resource: f:\tracewords | user: user | result: success
+
+  [2] Satır 12:
+      Eşleşen: 2025-07-21 12:54:57,132 - info - dijital kanıt analizi: user_passs.json
+  Bağlam:
+      2025-07-21 12:54:57,130 - info - dijital kanıt analizi: user_3.txt
+      2025-07-21 12:54:57,131 - info - dijital kanıt analizi: user_4.txt
+      2025-07-21 12:54:57,132 - info - dijital kanıt analizi: user_passs.json
+      2025-07-21 12:54:57,133 - info - dijital kanıt analizi: requirements.txt
+      2025-07-21 12:54:57,135 - info - dijital kanıt analizi: tracewords.log
+
+======================================================================
+
+----------------------------------------------------------------------
+DİJİTAL KANIT DOSYASI: F:\TraceWords\tracewords_audit.log
+----------------------------------------------------------------------
+Dosya Boyutu: 1,038 bytes
+Son Değiştirilme: 2025-07-21 12:54:46
+Oluşturulma Tarihi: 2025-07-21 12:54:46
+MD5 Hash (Bütünlük): 62cd2d032ab5a4a0847152f07f4b3b48
+
+BULUNAN DİJİTAL KANITLAR:
+  🔍 pass: 2 eşleşme
+
+KANIT BAĞLAMLARI (PII MASKELENMİŞ):
+
+  [1] Satır 3:
+      Eşleşen: 2025-07-21 12:54:57,104 - audit - session: c09f5ada-c100-44a5-9267-0d571e42d098 | action: analysis_parameters | resource: keywords: ['pass'], mode: partial | user: user | result: success
+  Bağlam:
+      2025-07-21 12:54:50,533 - audit - session: c09f5ada-c100-44a5-9267-0d571e42d098 | action: consent_granted | resource: data_processing | user: user | result: success
+      2025-07-21 12:54:50,533 - audit - session: c09f5ada-c100-44a5-9267-0d571e42d098 | action: consent_granted | resource: data_processing | user: user | result: success
+      2025-07-21 12:54:57,104 - audit - session: c09f5ada-c100-44a5-9267-0d571e42d098 | action: analysis_parameters | resource: keywords: ['pass'], mode: partial | user: user | result: success
+      2025-07-21 12:54:57,104 - audit - session: c09f5ada-c100-44a5-9267-0d571e42d098 | action: analysis_parameters | resource: keywords: ['pass'], mode: partial | user: user | result: success
+      2025-07-21 12:54:57,106 - audit - session: c09f5ada-c100-44a5-9267-0d571e42d098 | action: analysis_started | resource: f:\tracewords | user: user | result: success
+
+  [2] Satır 4:
+      Eşleşen: 2025-07-21 12:54:57,104 - audit - session: c09f5ada-c100-44a5-9267-0d571e42d098 | action: analysis_parameters | resource: keywords: ['pass'], mode: partial | user: user | result: success
+  Bağlam:
+      2025-07-21 12:54:50,533 - audit - session: c09f5ada-c100-44a5-9267-0d571e42d098 | action: consent_granted | resource: data_processing | user: user | result: success
+      2025-07-21 12:54:57,104 - audit - session: c09f5ada-c100-44a5-9267-0d571e42d098 | action: analysis_parameters | resource: keywords: ['pass'], mode: partial | user: user | result: success
+      2025-07-21 12:54:57,104 - audit - session: c09f5ada-c100-44a5-9267-0d571e42d098 | action: analysis_parameters | resource: keywords: ['pass'], mode: partial | user: user | result: success
+      2025-07-21 12:54:57,106 - audit - session: c09f5ada-c100-44a5-9267-0d571e42d098 | action: analysis_started | resource: f:\tracewords | user: user | result: success
+      2025-07-21 12:54:57,106 - audit - session: c09f5ada-c100-44a5-9267-0d571e42d098 | action: analysis_started | resource: f:\tracewords | user: user | result: success
+
+======================================================================
+
+TRACEWORDS ANALİZ ÖZETİ
+==============================
+Toplam Dijital Kanıt: 11
+Kanıt İçeren Dosya Sayısı: 7
+
+En Çok Dijital Kanıt İçeren Dosyalar:
+  📁 F:\TraceWords\tracewords.py: 3 kanıt
+  📁 F:\TraceWords\tracewords.log: 2 kanıt
+  📁 F:\TraceWords\tracewords_audit.log: 2 kanıt
+  📁 F:\TraceWords\user_1.csv: 1 kanıt
+  📁 F:\TraceWords\user_1.txt: 1 kanıt
+
+================================================================================
+GDPR/CCPA UYUMLULUK BİLDİRİMİ
+==============================
+Bu rapor, Avrupa Birliği Genel Veri Koruma Tüzüğü (GDPR) ve California
+Tüketici Gizliliği Yasası (CCPA) gerekliliklerine uygun olarak hazırlanmıştır.
+
+Veri İşleme İlkeleri:
+• Kişisel veriler maskelenmiş ve anonimleştirilmiştir
+• Veri minimizasyonu ilkesi uygulanmıştır
+• Tüm işlemler audit loglarına kaydedilmiştir
+• Yasal saklama süreleri uygulanmaktadır
+• Veri sahibinin hakları korunmuştur
+
+Veri Sahibi Hakları:
+• Erişim hakkı (GDPR Madde 15, CCPA §1798.110)
+• Düzeltme hakkı (GDPR Madde 16)
+• Silme hakkı (GDPR Madde 17, CCPA §1798.105)
+• Taşınabilirlik hakkı (GDPR Madde 20)
+• İtiraz etme hakkı (GDPR Madde 21, CCPA §1798.120)
+
+Rapor Oluşturulma: 2025-07-21 12:54:57
+Bu rapor TraceWords v4.0 tarafından veri gizliliği ve adli bilişim
+standartlarına uygun olarak hazırlanmıştır.

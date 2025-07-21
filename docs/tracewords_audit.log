@@ -1,0 +1,10 @@
+2025-07-21 12:54:50,533 - AUDIT - Session: c09f5ada-c100-44a5-9267-0d571e42d098 | Action: CONSENT_GRANTED | Resource: data_processing | User: user | Result: SUCCESS
+2025-07-21 12:54:50,533 - AUDIT - Session: c09f5ada-c100-44a5-9267-0d571e42d098 | Action: CONSENT_GRANTED | Resource: data_processing | User: user | Result: SUCCESS
+2025-07-21 12:54:57,104 - AUDIT - Session: c09f5ada-c100-44a5-9267-0d571e42d098 | Action: ANALYSIS_PARAMETERS | Resource: Keywords: ['pass'], Mode: partial | User: user | Result: SUCCESS
+2025-07-21 12:54:57,104 - AUDIT - Session: c09f5ada-c100-44a5-9267-0d571e42d098 | Action: ANALYSIS_PARAMETERS | Resource: Keywords: ['pass'], Mode: partial | User: user | Result: SUCCESS
+2025-07-21 12:54:57,106 - AUDIT - Session: c09f5ada-c100-44a5-9267-0d571e42d098 | Action: ANALYSIS_STARTED | Resource: F:\TraceWords | User: user | Result: SUCCESS
+2025-07-21 12:54:57,106 - AUDIT - Session: c09f5ada-c100-44a5-9267-0d571e42d098 | Action: ANALYSIS_STARTED | Resource: F:\TraceWords | User: user | Result: SUCCESS
+2025-07-21 12:54:57,168 - AUDIT - Session: c09f5ada-c100-44a5-9267-0d571e42d098 | Action: ANALYSIS_COMPLETED | Resource: F:\TraceWords - 11 files | User: user | Result: SUCCESS
+2025-07-21 12:54:57,168 - AUDIT - Session: c09f5ada-c100-44a5-9267-0d571e42d098 | Action: ANALYSIS_COMPLETED | Resource: F:\TraceWords - 11 files | User: user | Result: SUCCESS
+2025-07-21 12:54:57,190 - AUDIT - Session: c09f5ada-c100-44a5-9267-0d571e42d098 | Action: REPORT_SAVED | Resource: F:\TraceWords\tracewords_privacy_report.txt | User: user | Result: SUCCESS
+2025-07-21 12:54:57,190 - AUDIT - Session: c09f5ada-c100-44a5-9267-0d571e42d098 | Action: REPORT_SAVED | Resource: F:\TraceWords\tracewords_privacy_report.txt | User: user | Result: SUCCESS
