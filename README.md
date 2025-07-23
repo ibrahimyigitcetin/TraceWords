@@ -354,12 +354,12 @@ TraceWords üç farklı log dosyası oluşturur:
 - Paralel işleme optimizasyonu
 - Detaylı rapor formatı
 
-### v2.x
+### v2.0
 - Regex pattern desteği
 - Recursive arama
 - CSV/JSON dosya desteği
 
-### v1.x
+### v1.0
 - Temel anahtar kelime arama
 - Basit rapor oluşturma
 
