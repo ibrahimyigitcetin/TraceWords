@@ -336,7 +336,7 @@ TraceWords üç farklı log dosyası oluşturur:
 
 ## 📝 Sürüm Notları
 
-### v4.0 (GDPR/CCPA Uyumlu)
+### v4.0
 - GDPR ve CCPA uyumluluk özellikleri
 - PII otomatik tespiti ve maskeleme (12 tür)
 - Kullanıcı onay sistemi
@@ -382,4 +382,5 @@ Bu proje MIT lisansı altında dağıtılmaktadır. Detaylar için [LICENSE.md](
 **TraceWords v4.0** - GDPR/CCPA uyumlu dijital adli bilişim standartlarında anahtar kelime analizi aracı
 
 🔒 **Veri Gizliliği Yasalarına Uyumlu • PII Maskeleme • Audit Loglama • Yasal Uyumluluk**
+
 
