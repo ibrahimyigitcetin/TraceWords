@@ -7,7 +7,7 @@
   <img src="https://img.shields.io/badge/Contributions-Welcome-brightgreen?style=flat-square" alt="Contributions">
 </div>
 
-# TraceWords - GDPR/CCPA Uyumlu Dijital Anahtar Kelime Adli Taraması Aracı
+# 🕵️‍♂️ TraceWords - GDPR/CCPA Uyumlu Dijital Anahtar Kelime Adli Taraması Aracı
 
 🔍 **GDPR/CCPA Uyumlu Dijital Dijital Anahtar Kelime Adli Taraması v4.0**
 
@@ -382,3 +382,4 @@ Bu proje MIT lisansı altında dağıtılmaktadır. Detaylar için [LICENSE.md](
 **TraceWords v4.0** - GDPR/CCPA uyumlu dijital adli bilişim standartlarında anahtar kelime analizi aracı
 
 🔒 **Veri Gizliliği Yasalarına Uyumlu • PII Maskeleme • Audit Loglama • Yasal Uyumluluk**
+
