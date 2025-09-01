@@ -122,7 +122,6 @@ Lisans detayları için `LICENSE.md` dosyasını inceleyin.
 ## 📌 Ek Notlar
 
 - **📚 Referanslar**: Proje, GDPR ve CCPA gerekliliklerine uygun olarak geliştirilmiştir. Daha fazla bilgi için `README.md` ve ilgili yasal düzenlemeleri inceleyin.
-- **🗺️ Yol Haritası**: Projenin gelecekteki geliştirme planları için `ROADMAP.md` dosyasını inceleyin (varsa).
 - **📈 Potansiyel Geliştirme Alanları**: Yeni dosya formatı desteği (ör. `.pdf`, `.docx`), grafik kullanıcı arayüzü, çok dilli dokümantasyon veya yapay zeka tabanlı PII tespiti gibi özellikler projeyi daha geniş bir kitleye hitap edecek hale getirebilir.
 
 ---
