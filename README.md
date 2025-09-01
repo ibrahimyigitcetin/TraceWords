@@ -371,7 +371,7 @@ TraceWords üç farklı log dosyası oluşturur:
 4. Push edin (`git push origin feature/AmazingFeature`)
 5. Pull Request açın
 
-Detaylar için [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) dosyasını inceleyiniz.
+Detaylar için [CONTRIBUTING.md](CONTRIBUTING.md) ve [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) dosyasını inceleyiniz.
 
 ## 📄 Lisans
 
@@ -382,5 +382,6 @@ Bu proje MIT lisansı altında dağıtılmaktadır. Detaylar için [LICENSE.md](
 **TraceWords v4.0** - GDPR/CCPA uyumlu dijital adli bilişim standartlarında anahtar kelime analizi aracı
 
 🔒 **Veri Gizliliği Yasalarına Uyumlu • PII Maskeleme • Audit Loglama • Yasal Uyumluluk**
+
 
 
