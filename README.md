@@ -9,7 +9,7 @@
 
 # 🕵️‍♂️ TraceWords - GDPR/CCPA Uyumlu Dijital Anahtar Kelime Adli Taraması Aracı
 
-🔍 **GDPR/CCPA Uyumlu Dijital Dijital Anahtar Kelime Adli Taraması v4.0**
+🔍 **GDPR/CCPA Uyumlu Dijital Anahtar Kelime Adli Taraması v4.0**
 
 TraceWords, veri gizliliği yasalarına uyumlu olarak tasarlanmış, dijital adli bilişim standartlarında anahtar kelime arama ve dijital kanıt toplama aracıdır. Güvenlik uzmanları, sistem yöneticileri ve dijital adli bilişim uzmanları için geliştirilmiştir.
 
@@ -382,6 +382,7 @@ Bu proje MIT lisansı altında dağıtılmaktadır. Detaylar için [LICENSE.md](
 **TraceWords v4.0** - GDPR/CCPA uyumlu dijital adli bilişim standartlarında anahtar kelime analizi aracı
 
 🔒 **Veri Gizliliği Yasalarına Uyumlu • PII Maskeleme • Audit Loglama • Yasal Uyumluluk**
+
 
 
 
