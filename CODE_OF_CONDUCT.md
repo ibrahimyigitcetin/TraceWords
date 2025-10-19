@@ -33,7 +33,7 @@ Bu proje, açık ve hoşgörülü bir topluluk ortamı oluşturmayı ve sürdür
 
 ## 📬 İletişim
 
-Bu davranış kurallarıyla ilgili bir sorun bildirmeniz gerekiyorsa lütfen bizimle iletişime geçin:
+Bu davranış kurallarıyla ilgili bir sorun bildirmeniz gerekiyorsa lütfen benimle iletişime geçin:
 
 **İletişim Adresi:** 
 
