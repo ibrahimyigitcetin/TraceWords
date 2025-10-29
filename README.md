@@ -286,33 +286,6 @@ TraceWords üç farklı log dosyası oluşturur:
 2. **tracewords_audit.log**: Denetim kayıtları
 3. **tracewords_privacy.log**: Veri gizliliği olayları
 
-## 🛠️ Gelişmiş Özellikler
-
-### GDPR/CCPA Uyumluluk
-- Kullanıcı onay sistemi
-- PII otomatik tespiti ve maskeleme
-- Veri saklama süreleri yönetimi
-- Audit trail oluşturma
-- Veri minimizasyonu
-- Anonimleştirme seçenekleri
-
-### Paralel İşleme
-- 4 thread ile eşzamanlı dosya işleme
-- Büyük dizinler için optimize edilmiş performans
-- İlerleme çubuğu ile gerçek zamanlı durum
-
-### Dijital Kanıt Bütünlüğü
-- MD5 hash hesaplama
-- Dosya metadata toplama
-- Zaman damgası koruma
-- PII maskelenmiş bağlam çıkarma
-
-### Hata Yönetimi
-- Graceful error handling
-- Detaylı hata loglama
-- Dosya erişim kontrolü
-- Encoding sorunları çözümü
-
 ## 🚨 Güvenlik ve Yasal Notlar
 
 ### Veri Gizliliği
@@ -382,6 +355,7 @@ Bu proje MIT lisansı altında dağıtılmaktadır. Detaylar için [LICENSE.md](
 **TraceWords v4.0** - GDPR/CCPA uyumlu dijital adli bilişim standartlarında anahtar kelime analizi aracı
 
 🔒 **Veri Gizliliği Yasalarına Uyumlu • PII Maskeleme • Audit Loglama • Yasal Uyumluluk**
+
 
 
 
