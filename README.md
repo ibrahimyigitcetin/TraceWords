@@ -352,9 +352,8 @@ Bu proje MIT lisansı altında dağıtılmaktadır. Detaylar için [LICENSE.md](
 
 ---
 
-**TraceWords v4.0** - GDPR/CCPA uyumlu dijital adli bilişim standartlarında anahtar kelime analizi aracı
+**TraceWords v4.0** - **GDPR/CCPA uyumlu dijital adli bilişim standartlarında anahtar kelime analizi aracı**
 
-🔒 **Veri Gizliliği Yasalarına Uyumlu • PII Maskeleme • Audit Loglama • Yasal Uyumluluk**
 
 
 
