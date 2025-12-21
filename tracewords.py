@@ -611,8 +611,8 @@ def parse_args():
     )
     parser.add_argument(
         "-o", "--output",
-        default="tracewords_privacy_report.txt",
-        help="Rapor dosya adı (varsayılan: tracewords_privacy_report.txt)"
+        default="tracewords_report.txt",
+        help="Rapor dosya adı (varsayılan: tracewords_report.txt)"
     )
     parser.add_argument(
         "--no-pii-mask",
@@ -734,3 +734,4 @@ if __name__ == "__main__":
         print(f"\n🏁 TraceWords analizi sona erdi - {datetime.now().strftime('%H:%M:%S')}")
         print("📋 Oluşturulan loglar: tracewords.log, tracewords_audit.log, tracewords_privacy.log")
         logging.info("TraceWords v4.0 programı sona erdi.")
+
