@@ -105,7 +105,7 @@ tracewords_env\Scripts\activate
 pip install -r requirements.txt
 
 # TraceWords'ü çalıştır
-python tracewords.py /path/to/directory -k "password,admin,hack"
+python tracewords.py path\to\directory -k "password,admin,hack"
 
 # İşlem bittiğinde deaktif et
 deactivate
@@ -353,6 +353,7 @@ Bu proje MIT lisansı altında dağıtılmaktadır. Detaylar için [LICENSE.md](
 ---
 
 **TraceWords v4.0** - **GDPR/CCPA uyumlu dijital adli bilişim standartlarında anahtar kelime analizi aracı**
+
 
 
 
