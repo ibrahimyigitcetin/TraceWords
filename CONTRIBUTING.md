@@ -106,7 +106,7 @@ Değişikliklerinizi ve neden gerekli olduğunu açıkça tarif edin, özellikle
 
 ### 5. İnceleme Süreci
 
-Pull request’iniz proje yöneticileri tarafından incelenecek.  
+Pull request’iniz proje yöneticisi tarafından incelenecek.  
 Geri bildirimlere göre düzenlemeler yapmaya hazır olun.
 
 ---
