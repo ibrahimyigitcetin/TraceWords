@@ -143,5 +143,5 @@ git push origin main
 
 ## 🙏 Teşekkürler
 
-TraceWords projesine katkıda bulunmayı düşündüğünüz için teşekkür ederiz!  
+TraceWords projesine katkıda bulunmayı düşündüğünüz için teşekkür ederim!  
 Yardımlarınız, aracı daha güvenli ve kullanıcı dostu hale getirmek için çok değerli. Sorularınız veya ek özelleştirme talepleriniz olursa, lütfen benimle iletişime geçin.
