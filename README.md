@@ -384,7 +384,7 @@ TraceWords üç farklı dönen log dosyası oluşturur (her biri maks. 50MB, 5 y
 
 ## 📝 Sürüm Notları
 
-### v5.0 *(Güncel)*
+### *v5.0*
 
 - Fernet simetrik şifreleme (rapor ve log şifreleme)
 - `.zip` ve `.tar.gz` arşiv desteği (streaming, RAM dostu)
@@ -454,3 +454,4 @@ Bu proje MIT lisansı altında dağıtılmaktadır. Detaylar için [LICENSE.md](
 ---
 
 **TraceWords v5.0** - **GDPR/CCPA uyumlu, endüstriyel ölçekte dijital adli bilişim anahtar kelime analizi aracı**
+
