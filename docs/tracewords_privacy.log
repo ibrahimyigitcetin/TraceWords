@@ -1,0 +1,39 @@
+2026-03-07 19:38:40,667 - [PRIVACY]- Session: d4907b0a-753b-4594-acb8-7873138879c9 | Event: PII_DETECTED | Details: File: admin_panel.html, Types: ['email', 'phone_international', 'credit_card', 'url', 'iban']
+2026-03-07 19:38:40,668 - [PRIVACY]- Session: d4907b0a-753b-4594-acb8-7873138879c9 | Event: PII_MASKED | Details: Masked 6 PII items
+2026-03-07 19:38:40,667 - [PRIVACY]- Session: d4907b0a-753b-4594-acb8-7873138879c9 | Event: PII_DETECTED | Details: File: api_client.js, Types: ['email', 'credit_card', 'url']
+2026-03-07 19:38:40,670 - [PRIVACY]- Session: d4907b0a-753b-4594-acb8-7873138879c9 | Event: PII_MASKED | Details: Masked 4 PII items
+2026-03-07 19:38:40,669 - [PRIVACY]- Session: d4907b0a-753b-4594-acb8-7873138879c9 | Event: PII_DETECTED | Details: File: app.conf, Types: ['email', 'phone_international', 'ip_address']
+2026-03-07 19:38:40,671 - [PRIVACY]- Session: d4907b0a-753b-4594-acb8-7873138879c9 | Event: PII_MASKED | Details: Masked 6 PII items
+2026-03-07 19:38:40,672 - [PRIVACY]- Session: d4907b0a-753b-4594-acb8-7873138879c9 | Event: PII_DETECTED | Details: File: credentials.txt, Types: ['email', 'phone_international', 'ip_address', 'url']
+2026-03-07 19:38:40,672 - [PRIVACY]- Session: d4907b0a-753b-4594-acb8-7873138879c9 | Event: PII_MASKED | Details: Masked 4 PII items
+2026-03-07 19:38:40,672 - [PRIVACY]- Session: d4907b0a-753b-4594-acb8-7873138879c9 | Event: PII_DETECTED | Details: File: config.xml, Types: ['email', 'phone_international', 'credit_card', 'ip_address', 'iban']
+2026-03-07 19:38:40,673 - [PRIVACY]- Session: d4907b0a-753b-4594-acb8-7873138879c9 | Event: PII_MASKED | Details: Masked 6 PII items
+2026-03-07 19:38:40,673 - [PRIVACY]- Session: d4907b0a-753b-4594-acb8-7873138879c9 | Event: PII_DETECTED | Details: File: connect.php, Types: ['email', 'ip_address', 'mac_address']
+2026-03-07 19:38:40,674 - [PRIVACY]- Session: d4907b0a-753b-4594-acb8-7873138879c9 | Event: PII_MASKED | Details: Masked 4 PII items
+2026-03-07 19:38:40,674 - [PRIVACY]- Session: d4907b0a-753b-4594-acb8-7873138879c9 | Event: PII_DETECTED | Details: File: employees.json, Types: ['email', 'phone_international', 'iban']
+2026-03-07 19:38:40,675 - [PRIVACY]- Session: d4907b0a-753b-4594-acb8-7873138879c9 | Event: PII_MASKED | Details: Masked 5 PII items
+2026-03-07 19:38:40,674 - [PRIVACY]- Session: d4907b0a-753b-4594-acb8-7873138879c9 | Event: PII_DETECTED | Details: File: deploy_notes.txt, Types: ['iban']
+2026-03-07 19:38:40,675 - [PRIVACY]- Session: d4907b0a-753b-4594-acb8-7873138879c9 | Event: PII_MASKED | Details: Masked 1 PII items
+2026-03-07 19:38:40,674 - [PRIVACY]- Session: d4907b0a-753b-4594-acb8-7873138879c9 | Event: PII_DETECTED | Details: File: db_config.py, Types: ['email', 'phone_international', 'ip_address']
+2026-03-07 19:38:40,677 - [PRIVACY]- Session: d4907b0a-753b-4594-acb8-7873138879c9 | Event: PII_MASKED | Details: Masked 6 PII items
+2026-03-07 19:38:40,676 - [PRIVACY]- Session: d4907b0a-753b-4594-acb8-7873138879c9 | Event: PII_DETECTED | Details: File: archived_keys.txt, Types: ['email']
+2026-03-07 19:38:40,678 - [PRIVACY]- Session: d4907b0a-753b-4594-acb8-7873138879c9 | Event: PII_MASKED | Details: Masked 1 PII items
+2026-03-07 19:38:40,678 - [PRIVACY]- Session: d4907b0a-753b-4594-acb8-7873138879c9 | Event: PII_DETECTED | Details: File: it_report.pdf, Types: ['email', 'phone_international', 'ip_address', 'mac_address', 'url', 'ib...
+2026-03-07 19:38:40,678 - [PRIVACY]- Session: d4907b0a-753b-4594-acb8-7873138879c9 | Event: PII_DETECTED | Details: File: settings.ini, Types: ['email', 'phone_international', 'url', 'iban']
+2026-03-07 19:38:40,678 - [PRIVACY]- Session: d4907b0a-753b-4594-acb8-7873138879c9 | Event: PII_DETECTED | Details: File: notification.eml, Types: ['email', 'phone_international', 'ip_address', 'url', 'iban']
+2026-03-07 19:38:40,678 - [PRIVACY]- Session: d4907b0a-753b-4594-acb8-7873138879c9 | Event: PII_DETECTED | Details: File: schema.sql, Types: ['email', 'phone_international', 'iban']
+2026-03-07 19:38:40,680 - [PRIVACY]- Session: d4907b0a-753b-4594-acb8-7873138879c9 | Event: PII_MASKED | Details: Masked 8 PII items
+2026-03-07 19:38:40,681 - [PRIVACY]- Session: d4907b0a-753b-4594-acb8-7873138879c9 | Event: PII_DETECTED | Details: File: system.log, Types: ['email', 'credit_card', 'ip_address', 'iban']
+2026-03-07 19:38:40,682 - [PRIVACY]- Session: d4907b0a-753b-4594-acb8-7873138879c9 | Event: PII_DETECTED | Details: File: company_data.xlsx, Types: ['email', 'phone_international', 'credit_card', 'ip_address', 'url',...
+2026-03-07 19:38:40,682 - [PRIVACY]- Session: d4907b0a-753b-4594-acb8-7873138879c9 | Event: PII_MASKED | Details: Masked 6 PII items
+2026-03-07 19:38:40,683 - [PRIVACY]- Session: d4907b0a-753b-4594-acb8-7873138879c9 | Event: PII_MASKED | Details: Masked 6 PII items
+2026-03-07 19:38:40,684 - [PRIVACY]- Session: d4907b0a-753b-4594-acb8-7873138879c9 | Event: PII_DETECTED | Details: File: access_report.docx, Types: ['email']
+2026-03-07 19:38:40,684 - [PRIVACY]- Session: d4907b0a-753b-4594-acb8-7873138879c9 | Event: PII_MASKED | Details: Masked 7 PII items
+2026-03-07 19:38:40,685 - [PRIVACY]- Session: d4907b0a-753b-4594-acb8-7873138879c9 | Event: PII_MASKED | Details: Masked 11 PII items
+2026-03-07 19:38:40,686 - [PRIVACY]- Session: d4907b0a-753b-4594-acb8-7873138879c9 | Event: PII_MASKED | Details: Masked 14 PII items
+2026-03-07 19:38:40,689 - [PRIVACY]- Session: d4907b0a-753b-4594-acb8-7873138879c9 | Event: PII_MASKED | Details: Masked 1 PII items
+2026-03-07 19:38:40,691 - [PRIVACY]- Session: d4907b0a-753b-4594-acb8-7873138879c9 | Event: PII_DETECTED | Details: File: old_keys/archived_keys.txt, Types: ['email']
+2026-03-07 19:38:40,701 - [PRIVACY]- Session: d4907b0a-753b-4594-acb8-7873138879c9 | Event: PII_MASKED | Details: Masked 1 PII items
+2026-03-07 19:38:40,715 - [PRIVACY]- Session: d4907b0a-753b-4594-acb8-7873138879c9 | Event: PII_DETECTED | Details: File: old_config.ini, Types: ['email', 'phone_international', 'iban']
+2026-03-07 19:38:40,716 - [PRIVACY]- Session: d4907b0a-753b-4594-acb8-7873138879c9 | Event: PII_MASKED | Details: Masked 3 PII items
+2026-03-07 19:38:40,720 - [PRIVACY]- Session: d4907b0a-753b-4594-acb8-7873138879c9 | Event: PII_SUMMARY | Details: Types: {'email': 44, 'phone_international': 12, 'credit_card': 5, 'url': 7, 'iban': 11, 'ip_address'...
