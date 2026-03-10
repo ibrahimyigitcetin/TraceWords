@@ -11,6 +11,10 @@
 
 TraceWords, veri gizliliği yasalarına uyumlu olarak tasarlanmış, dijital adli bilişim standartlarında anahtar kelime arama ve dijital kanıt toplama aracıdır. Güvenlik uzmanları, sistem yöneticileri ve dijital adli bilişim uzmanları için geliştirilmiştir.
 
+![TraceWords_CLI_1](./docs/cli_1.png)
+
+![TraceWords_CLI_2](./docs/cli_2.png)
+
 ---
 
 ## 🎯 Özellikler
@@ -454,4 +458,5 @@ Bu proje MIT lisansı altında dağıtılmaktadır. Detaylar için [LICENSE.md](
 ---
 
 **TraceWords v5.0** - **GDPR/CCPA uyumlu, endüstriyel ölçekte dijital adli bilişim anahtar kelime analizi aracı**
+
 
