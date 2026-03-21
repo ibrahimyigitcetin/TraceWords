@@ -388,7 +388,7 @@ TraceWords üç farklı dönen log dosyası oluşturur (her biri maks. 50MB, 5 y
 
 ## 📝 Sürüm Notları
 
-### **v5.0**
+### v5.0
 
 - Fernet simetrik şifreleme (rapor ve log şifreleme)
 - `.zip` ve `.tar.gz` arşiv desteği (streaming, RAM dostu)
