@@ -28,6 +28,8 @@ import zipfile
 import tarfile
 from email import policy
 from email.parser import BytesParser
+import pandas as pd
+import io
 
 from dataclasses import dataclass
 
@@ -537,8 +539,9 @@ def read_file_content(filepath: str, file_stream: Optional[Union[IO, BinaryIO]] 
     try:
         # Check size if it's a physical file
         if not file_stream and os.path.exists(filepath):
-            if os.path.getsize(filepath) > CONFIG.max_file_size_bytes:
-                logging.warning(f"{os.path.basename(filepath)} too large ({os.path.getsize(filepath)} bytes), skipping.")
+            file_size = os.path.getsize(filepath)
+            if file_size > CONFIG.max_file_size_bytes:
+                logging.warning(f"{os.path.basename(filepath)} too large ({file_size} bytes), skipping.")
                 return ""
         
         # Reading strategy based on file extension
@@ -870,7 +873,11 @@ def process_file(
     # Final logic for single files (or archive members)
     # v5.0: Check if we should use chunked processing for large text files
     if file_obj is None and ext in (".txt", ".log", ".py", ".js", ".php", ".html", ".xml", ".sql", ".conf", ".ini"):
-        if os.path.exists(filepath) and os.path.getsize(filepath) > CONFIG.LARGE_FILE_THRESHOLD_BYTES:
+        file_size = os.path.getsize(filepath) if os.path.exists(filepath) else 0
+        if file_size > CONFIG.max_file_size_bytes:
+            logging.warning(f"{os.path.basename(filepath)} too large ({file_size} bytes), skipping.")
+            return []
+        if file_size > CONFIG.LARGE_FILE_THRESHOLD_BYTES:
             matches, all_contexts = process_large_file_chunked(filepath, keywords, regex_mode, exact_match, session_id, privacy_logger)
             file_hash = calculate_file_hash(filepath)
             stat = os.stat(filepath)
@@ -998,16 +1005,23 @@ def search_keywords(
     
     # Create file list
     files = []
-    if recursive:
-        for root, dirs, filenames in os.walk(directory):
-            for filename in filenames:
-                if filename.lower().endswith(CONFIG.SUPPORTED_FORMATS):
-                    files.append(os.path.join(root, filename))
+    if os.path.isfile(directory):
+        if directory.lower().endswith(CONFIG.SUPPORTED_FORMATS):
+            files.append(directory)
+    elif os.path.isdir(directory):
+        if recursive:
+            for root, dirs, filenames in os.walk(directory):
+                for filename in filenames:
+                    if filename.lower().endswith(CONFIG.SUPPORTED_FORMATS):
+                        files.append(os.path.join(root, filename))
+        else:
+            files = [
+                os.path.join(directory, f) for f in os.listdir(directory)
+                if f.lower().endswith(CONFIG.SUPPORTED_FORMATS)
+            ]
     else:
-        files = [
-            os.path.join(directory, f) for f in os.listdir(directory)
-            if f.lower().endswith(CONFIG.SUPPORTED_FORMATS)
-        ]
+        CONSOLE.print(f"[bold red]❌ Geçersiz yol (Dosya veya dizin değil): {directory}[/bold red]")
+        return found, 0, pii_summary, []
     
     file_count = len(files)
     
@@ -1138,7 +1152,8 @@ def save_report(
     """Save TraceWords analysis results with path traversal protection and optional encryption"""
     # Path Traversal Protection: Ensure report stays in the intended directory
     output_file = os.path.basename(output_file)
-    full_path = os.path.join(directory, output_file)
+    target_dir = os.path.dirname(directory) if os.path.isfile(directory) else directory
+    full_path = os.path.join(target_dir, output_file)
     
     if os.path.exists(full_path) and not batch_mode:
         overwrite = questionary.confirm(f"{output_file} zaten mevcut. Üzerine yazılsın mı?").ask()
@@ -1451,8 +1466,15 @@ def main():
     
     # Keyword acquisition: Support both CLI and interactive
     keywords = []
+    # Keyword acquisition: Support both CLI and interactive
+    keywords = []
     if args.keywords:
-        keywords = [kw.strip() for kw in args.keywords.split(",") if kw.strip()]
+        # v5.0 BUG FIX: Regex mode logic for commas (BUG-18)
+        if args.regex and "," in args.keywords and (args.keywords.count("[") > 0 or args.keywords.count("{") > 0):
+            # If it looks like a complex regex, don't split by comma
+            keywords = [args.keywords.strip()]
+        else:
+            keywords = [kw.strip() for kw in args.keywords.split(",") if kw.strip()]
     
     if not keywords and not args.batch:
         kw_input = questionary.text("Analiz edilecek anahtar kelimeleri girin (virgülle ayırın):").ask()
