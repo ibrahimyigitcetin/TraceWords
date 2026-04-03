@@ -312,9 +312,16 @@ def setup_logging() -> Tuple[logging.Logger, logging.Logger]:
         audit_logger = logging.getLogger('audit')
         privacy_logger = logging.getLogger('privacy')
 
-        # Ensure root logging is setup if not already
-        if not logger.hasHandlers():
-            # Use RotatingFileHandler for root logger too
+        # Ensure root logger has a RotatingFileHandler for tracewords_info.log.
+        # NOTE: We check handler types explicitly instead of hasHandlers() because
+        # Python may have already attached a StreamHandler (via logging.lastResort or
+        # an early logging.info() call in __main__) before setup_logging() is invoked,
+        # which would cause hasHandlers() to return True and skip file handler setup,
+        # leaving tracewords_info.log never created.
+        has_file_handler = any(
+            isinstance(h, logging.FileHandler) for h in logger.handlers
+        )
+        if not has_file_handler:
             root_handler = RotatingFileHandler(
                 CONFIG.LOG_FILE, 
                 maxBytes=CONFIG.LOG_MAX_BYTES, 
@@ -547,15 +554,33 @@ def read_file_content(filepath: str, file_stream: Optional[Union[IO, BinaryIO]] 
         # Reading strategy based on file extension
         if ext in (".txt", ".log", ".py", ".js", ".php", ".html", ".xml", ".sql", ".conf", ".ini"):
             if file_stream:
-                return file_stream.read().decode("utf-8", errors="ignore").lower()
-            with open(filepath, "r", encoding="utf-8", errors="ignore") as file:
-                return file.read().lower()
+                raw = file_stream.read()
+                try:
+                    return raw.decode("utf-8").lower()
+                except UnicodeDecodeError as e:
+                    logging.error(f"Geçersiz byte(lar) stream içinde ({filepath}): {e}")
+                    raise
+            try:
+                with open(filepath, "r", encoding="utf-8") as file:
+                    return file.read().lower()
+            except UnicodeDecodeError as e:
+                logging.error(f"Geçersiz byte(lar) dosyada ({filepath}): {e}")
+                raise
         elif ext == ".json":
             if file_stream:
-                data = json.loads(file_stream.read().decode("utf-8", errors="ignore"))
+                raw = file_stream.read()
+                try:
+                    data = json.loads(raw.decode("utf-8"))
+                except UnicodeDecodeError as e:
+                    logging.error(f"Geçersiz byte(lar) JSON stream içinde ({filepath}): {e}")
+                    raise
             else:
-                with open(filepath, "r", encoding="utf-8", errors="ignore") as file:
-                    data = json.load(file)
+                try:
+                    with open(filepath, "r", encoding="utf-8") as file:
+                        data = json.load(file)
+                except UnicodeDecodeError as e:
+                    logging.error(f"Geçersiz byte(lar) JSON dosyasında ({filepath}): {e}")
+                    raise
             return json.dumps(data, indent=2).lower()
         elif ext == ".csv":
             try:
@@ -616,6 +641,8 @@ def read_file_content(filepath: str, file_stream: Optional[Union[IO, BinaryIO]] 
             body = msg.get_body(preferencelist=('plain'))
             content = f"Subject: {msg['subject']}\nFrom: {msg['from']}\nTo: {msg['to']}\nDate: {msg['date']}\n\n{body.get_content() if body else ''}"
             return content.lower()
+    except UnicodeDecodeError:
+        raise
     except Exception as e:
         logging.error(f"{os.path.basename(filepath)} okunamadı: {e}")
     return ""
@@ -688,40 +715,44 @@ def process_large_file_chunked(filepath: str, keywords: List[str],
         last_centered_no = 0            # Last processed line number
         i = -1
         
-        with open(filepath, 'r', encoding='utf-8', errors='ignore') as f:
-            for i, line in enumerate(f):
-                lines_buffer.append(line)
-                
-                # Process only when buffer is full
-                if len(lines_buffer) == buffer_size:
-                    center_no = i - context_radius + 1
-                    center_line = lines_buffer[context_radius]
-                    last_centered_no = center_no
+        try:
+            with open(filepath, 'r', encoding='utf-8') as f:
+                for i, line in enumerate(f):
+                    lines_buffer.append(line)
                     
-                    for kw_str, pattern in patterns:
-                        if safe_regex_search(pattern, center_line):
-                            matches[kw_str] = matches.get(kw_str, 0) + 1
-                            context_block = "".join(lines_buffer)
-                            
-                            if privacy_logger and PRIVACY_SETTINGS["enable_pii_masking"]:
-                                pii_detected = detect_pii(context_block)
-                                if pii_detected:
-                                    context_block = mask_pii(context_block, pii_detected, session_id, privacy_logger)
-                            
-                            try:
-                                highlighted_line = pattern.sub(r"[bold red]\g<0>[/bold red]", center_line.strip())
-                                highlighted_context = pattern.sub(r"[bold red]\g<0>[/bold red]", context_block)
-                            except re.error:
-                                highlighted_line = center_line.strip()
-                                highlighted_context = context_block
-                            
-                            all_contexts.append({
-                                'line_number': center_no,
-                                'context': highlighted_context,
-                                'matched_line': highlighted_line
-                            })
+                    # Process only when buffer is full
+                    if len(lines_buffer) == buffer_size:
+                        center_no = i - context_radius + 1
+                        center_line = lines_buffer[context_radius]
+                        last_centered_no = center_no
+                        
+                        for kw_str, pattern in patterns:
+                            if safe_regex_search(pattern, center_line):
+                                matches[kw_str] = matches.get(kw_str, 0) + 1
+                                context_block = "".join(lines_buffer)
+                                
+                                if privacy_logger and PRIVACY_SETTINGS["enable_pii_masking"]:
+                                    pii_detected = detect_pii(context_block)
+                                    if pii_detected:
+                                        context_block = mask_pii(context_block, pii_detected, session_id, privacy_logger)
+                                
+                                try:
+                                    highlighted_line = pattern.sub(r"[bold red]\g<0>[/bold red]", center_line.strip())
+                                    highlighted_context = pattern.sub(r"[bold red]\g<0>[/bold red]", context_block)
+                                except re.error:
+                                    highlighted_line = center_line.strip()
+                                    highlighted_context = context_block
+                                
+                                all_contexts.append({
+                                    'line_number': center_no,
+                                    'context': highlighted_context,
+                                    'matched_line': highlighted_line
+                                })
                     
                     lines_buffer.pop(0)
+        except UnicodeDecodeError as e:
+            logging.error(f"Geçersiz byte(lar) büyük dosyada ({filepath}): {e}")
+            raise
 
             # Trailing phase: process lines remaining in the buffer after the last centered line
             # To preserve context, we don't pop until we check the matches
@@ -758,6 +789,8 @@ def process_large_file_chunked(filepath: str, keywords: List[str],
                 
                 trailing_idx += 1
 
+    except UnicodeDecodeError:
+        raise
     except Exception as e:
         logging.error(f"Failed to read {filepath} chunked: {e}")
     
