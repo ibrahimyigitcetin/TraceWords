@@ -1,0 +1,11 @@
+2026-04-04 02:06:52,182 - INFO - After setup_logging info call
+2026-04-04 02:06:52,197 - INFO - Global ThreadPoolExecutor cleaned up
+2026-04-08 15:07:24,790 - INFO - TraceWords v5.0 programı başlatıldı.
+2026-04-08 15:07:29,499 - ERROR - Invalid keywords: Geçersiz karakter bulundu: '\b(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14})\b'
+2026-04-08 15:07:29,527 - INFO - TraceWords v5.0 programı sona erdi.
+2026-04-08 15:07:29,528 - INFO - Global ThreadPoolExecutor cleaned up
+2026-04-08 15:10:45,933 - INFO - TraceWords v5.0 programı başlatıldı.
+2026-04-08 15:10:51,611 - INFO - TraceWords analizi başlatıldı: C:\Users\Ev\Documents\Projeler\TraceWords\tracewords_test
+2026-04-08 15:10:51,840 - INFO - TraceWords analizi tamamlandı. Dosya sayısı: 18, Süre: 0.22 saniye
+2026-04-08 15:10:51,848 - INFO - TraceWords v5.0 programı sona erdi.
+2026-04-08 15:10:51,850 - INFO - Global ThreadPoolExecutor cleaned up

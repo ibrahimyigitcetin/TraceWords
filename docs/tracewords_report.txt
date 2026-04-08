@@ -1,0 +1,456 @@
+================================================================================
+TRACEWORDS — GDPR/CCPA UYUMLU DİJİTAL ADLİ TARAMA RAPORU
+================================================================================
+TraceWords v5.0 - GDPR/CCPA Uyumlu Dijital Adli Tarama Aracı
+Analiz Tarihi: 2026-04-08 15:10:51
+Oturum ID: 0fc3b402-5724-48dc-9331-b712e55c2cc4
+Aranan Terimler: admin, password
+Bulunan Dijital Kanıt Dosyası: 7
+Analiz Edilen Dizin: C:\Users\Ev\Documents\Projeler\TraceWords\tracewords_test
+
+VERİ GİZLİLİĞİ VE UYUMLULUK BİLGİLERİ
+--------------------------------------------------
+PII Maskeleme Durumu: Aktif
+Veri Minimizasyonu: Aktif
+Audit Loglama: Aktif
+Sonuç Anonimleştirme: Aktif
+Veri Saklama Süresi: 90 gün
+Silinme Tarihi: 2026-07-07
+
+KİŞİSEL VERİ (PII) TESPİT ÖZETİ
+----------------------------------------
+  🔒 E-posta Adresi: 49 adet
+  🔒 Uluslararası Telefon: 15 adet
+  🔒 Kredi Kartı No: 5 adet
+  🔒 IP Adresi: 19 adet
+  🔒 IBAN No: 12 adet
+  🔒 URL: 7 adet
+  🔒 MAC Adresi: 2 adet
+  🔒 Doğum Tarihi: 5 adet
+
+⚠️  Tüm kişisel veriler maskelenmiştir ve orijinal değerler rapordan çıkarılmıştır.
+
+----------------------------------------------------------------------
+DİJİTAL KANIT DOSYASI: file_3a476fd9.conf
+----------------------------------------------------------------------
+Dosya Boyutu: 983 bytes
+Son Değiştirilme: 2026-03-07 19:34:32
+Oluşturulma Tarihi: 2026-03-07 16:28:32
+SHA-256 Hash (Adli Bütünlük): 22c892341dca5d48711d9d3ae5161621fd1ea13c3d3514a16023615e036645f4
+Tespit Edilen PII Türleri: email, phone_international, ip_address
+
+BULUNAN DİJİTAL KANITLAR:
+  🔍 admin: 3 eşleşme
+  🔍 password: 2 eşleşme
+
+KANIT BAĞLAMLARI (PII MASKELENMİŞ):
+
+  [1] Satır 14:
+      Eşleşen: user            = admin
+  Bağlam:
+      port            = 5432
+      name            = nexora_production
+      user            = admin
+      password        = admin@nexora2024!
+      pool_size       = 20
+
+  [2] Satır 15:
+      Eşleşen: password        = admin@nexora2024!
+  Bağlam:
+      name            = nexora_production
+      user            = admin
+      password        = admin@nexora2024!
+      pool_size       = 20
+      
+
+  [3] Satır 33:
+      Eşleşen: [admin]
+  Bağlam:
+      tls             = true
+      
+      [admin]
+      email           = [EMAIL_1]
+      phone           = [PHONE_3] 532 841 77 23
+
+  [4] Satır 15:
+      Eşleşen: password        = admin@nexora2024!
+  Bağlam:
+      name            = nexora_production
+      user            = admin
+      password        = admin@nexora2024!
+      pool_size       = 20
+      
+
+  [5] Satır 30:
+      Eşleşen: password        = m@il2024
+  Bağlam:
+      port            = 587
+      user            = [EMAIL_0]
+      password        = m@il2024
+      tls             = true
+      
+
+======================================================================
+
+----------------------------------------------------------------------
+DİJİTAL KANIT DOSYASI: file_4e1b775e.txt
+----------------------------------------------------------------------
+Dosya Boyutu: 759 bytes
+Son Değiştirilme: 2026-03-07 19:34:32
+Oluşturulma Tarihi: 2026-03-07 16:27:08
+SHA-256 Hash (Adli Bütünlük): cb5421763d19361b9473cd852253db6eba0bc97c11402ffee48c0f4ee5be9858
+Tespit Edilen PII Türleri: email, phone_international, ip_address, url
+
+BULUNAN DİJİTAL KANITLAR:
+  🔍 admin: 4 eşleşme
+  🔍 password: 1 eşleşme
+
+KANIT BAĞLAMLARI (PII MASKELENMİŞ):
+
+  [1] Satır 9:
+      Eşleşen: db user    : admin
+  Bağlam:
+      db host    : db-prod-01.nexora.internal
+      db name    : nexora_production
+      db user    : admin
+      db pass    : admin@nexora2024!
+      
+
+  [2] Satır 10:
+      Eşleşen: db pass    : admin@nexora2024!
+  Bağlam:
+      db name    : nexora_production
+      db user    : admin
+      db pass    : admin@nexora2024!
+      
+      -- yönetim paneli --
+
+  [3] Satır 14:
+      Eşleşen: kullanıcı  : superadmin
+  Bağlam:
+      -- yönetim paneli --
+      url        : [PII_URL_3]
+      kullanıcı  : superadmin
+      password   : nx$uper2024
+      
+
+  [4] Satır 29:
+      Eşleşen: admin mail : [EMAIL_0]
+  Bağlam:
+      
+      -- i̇letişim --
+      admin mail : [EMAIL_0]
+      tel        : [PHONE_1] 532 841 77 23
+      tc kimlik  : 23456789012
+
+  [5] Satır 15:
+      Eşleşen: password   : nx$uper2024
+  Bağlam:
+      url        : [PII_URL_3]
+      kullanıcı  : superadmin
+      password   : nx$uper2024
+      
+      -- sunucu ssh --
+
+======================================================================
+
+----------------------------------------------------------------------
+DİJİTAL KANIT DOSYASI: file_daa2bfb7.txt
+----------------------------------------------------------------------
+Dosya Boyutu: 484 bytes
+Son Değiştirilme: 2026-03-07 16:31:00 (ZIP)
+Oluşturulma Tarihi: N/A (Archive)
+SHA-256 Hash (Adli Bütünlük): 31d3a5bdc1641fa3cb0a78ed482b7e6f1ead2dc4b61c09ab7c20d26901751b68
+Tespit Edilen PII Türleri: email
+
+BULUNAN DİJİTAL KANITLAR:
+  🔍 admin: 1 eşleşme
+  🔍 password: 3 eşleşme
+
+KANIT BAĞLAMLARI (PII MASKELENMİŞ):
+
+  [1] Satır 19:
+      Eşleşen: [eski admin]
+  Bağlam:
+      secret key: wjalrxutnfemi/k7mdeng/bpxrficynexora+key
+      
+      [eski admin]
+      email   : [EMAIL_0]
+      password: 0ldp@ss2023
+
+  [2] Satır 8:
+      Eşleşen: password : vpn@nexora24!
+  Bağlam:
+      host     : vpn.nexora.com.tr
+      user     : k.arslan
+      password : vpn@nexora24!
+      
+      
+
+  [3] Satır 13:
+      Eşleşen: password : bkp#2024nexora
+  Bağlam:
+      host     : ftp.nexora.com.tr
+      user     : nexora_backup
+      password : bkp#2024nexora
+      
+      
+
+  [4] Satır 21:
+      Eşleşen: password: 0ldp@ss2023
+  Bağlam:
+      
+      email   : [EMAIL_0]
+      password: 0ldp@ss2023
+      tc      : 67890123456
+      
+
+======================================================================
+
+----------------------------------------------------------------------
+DİJİTAL KANIT DOSYASI: file_219b9c62.py
+----------------------------------------------------------------------
+Dosya Boyutu: 1,850 bytes
+Son Değiştirilme: 2026-03-07 19:34:32
+Oluşturulma Tarihi: 2026-03-07 16:27:34
+SHA-256 Hash (Adli Bütünlük): 0c1a491163c257616ef88f1be6975b31aefa082eeaae23a9f07fed74e301cc56
+Tespit Edilen PII Türleri: email, phone_international, ip_address
+
+BULUNAN DİJİTAL KANITLAR:
+  🔍 admin: 5 eşleşme
+  🔍 password: 4 eşleşme
+
+KANIT BAĞLAMLARI (PII MASKELENMİŞ):
+
+  [1] Satır 13:
+      Eşleşen: "user":     "admin",
+  Bağlam:
+          "port":     5432,
+          "name":     "nexora_production",
+          "user":     "admin",
+          "password": "admin@nexora2024!",
+          "ssl":      true,
+
+  [2] Satır 14:
+      Eşleşen: "password": "admin@nexora2024!",
+  Bağlam:
+          "name":     "nexora_production",
+          "user":     "admin",
+          "password": "admin@nexora2024!",
+          "ssl":      true,
+      }
+
+  [3] Satır 37:
+      Eşleşen: admin_email    = "[EMAIL_1]"
+  Bağlam:
+      
+      # ─── yönetici bilgileri ───────────────────────────────────────
+      admin_email    = "[EMAIL_1]"
+      admin_phone    = "[PHONE_4] 532 841 77 23"
+      admin_tc       = "23456789012"
+
+  [4] Satır 38:
+      Eşleşen: admin_phone    = "[PHONE_4] 532 841 77 23"
+  Bağlam:
+      # ─── yönetici bilgileri ───────────────────────────────────────
+      admin_email    = "[EMAIL_1]"
+      admin_phone    = "[PHONE_4] 532 841 77 23"
+      admin_tc       = "23456789012"
+      
+
+  [5] Satır 39:
+      Eşleşen: admin_tc       = "23456789012"
+  Bağlam:
+      admin_email    = "[EMAIL_1]"
+      admin_phone    = "[PHONE_4] 532 841 77 23"
+      admin_tc       = "23456789012"
+      
+      def get_connection_string():
+
+======================================================================
+
+----------------------------------------------------------------------
+DİJİTAL KANIT DOSYASI: file_822738b9.txt
+----------------------------------------------------------------------
+Dosya Boyutu: 484 bytes
+Son Değiştirilme: 2026-03-07 19:31:00 (TAR)
+Oluşturulma Tarihi: N/A (Archive)
+SHA-256 Hash (Adli Bütünlük): 31d3a5bdc1641fa3cb0a78ed482b7e6f1ead2dc4b61c09ab7c20d26901751b68
+Tespit Edilen PII Türleri: email
+
+BULUNAN DİJİTAL KANITLAR:
+  🔍 admin: 1 eşleşme
+  🔍 password: 3 eşleşme
+
+KANIT BAĞLAMLARI (PII MASKELENMİŞ):
+
+  [1] Satır 19:
+      Eşleşen: [eski admin]
+  Bağlam:
+      secret key: wjalrxutnfemi/k7mdeng/bpxrficynexora+key
+      
+      [eski admin]
+      email   : [EMAIL_0]
+      password: 0ldp@ss2023
+
+  [2] Satır 8:
+      Eşleşen: password : vpn@nexora24!
+  Bağlam:
+      host     : vpn.nexora.com.tr
+      user     : k.arslan
+      password : vpn@nexora24!
+      
+      
+
+  [3] Satır 13:
+      Eşleşen: password : bkp#2024nexora
+  Bağlam:
+      host     : ftp.nexora.com.tr
+      user     : nexora_backup
+      password : bkp#2024nexora
+      
+      
+
+  [4] Satır 21:
+      Eşleşen: password: 0ldp@ss2023
+  Bağlam:
+      
+      email   : [EMAIL_0]
+      password: 0ldp@ss2023
+      tc      : 67890123456
+      
+
+======================================================================
+
+----------------------------------------------------------------------
+DİJİTAL KANIT DOSYASI: file_aef06f59.php
+----------------------------------------------------------------------
+Dosya Boyutu: 1,212 bytes
+Son Değiştirilme: 2026-03-07 19:34:32
+Oluşturulma Tarihi: 2026-03-07 16:27:54
+SHA-256 Hash (Adli Bütünlük): e51588880e39e41d93974156217e04ed93a03231135fbaa44757d75c8b971558
+Tespit Edilen PII Türleri: email, ip_address, mac_address
+
+BULUNAN DİJİTAL KANITLAR:
+  🔍 admin: 6 eşleşme
+  🔍 password: 1 eşleşme
+
+KANIT BAĞLAMLARI (PII MASKELENMİŞ):
+
+  [1] Satır 9:
+      Eşleşen: define('db_user',     'admin');
+  Bağlam:
+      define('db_host',     'db-prod-01.nexora.internal');
+      define('db_name',     'nexora_production');
+      define('db_user',     'admin');
+      define('db_pass',     'admin@nexora2024!');
+      define('admin_email', '[EMAIL_1]');
+
+  [2] Satır 10:
+      Eşleşen: define('db_pass',     'admin@nexora2024!');
+  Bağlam:
+      define('db_name',     'nexora_production');
+      define('db_user',     'admin');
+      define('db_pass',     'admin@nexora2024!');
+      define('admin_email', '[EMAIL_1]');
+      define('secret_key',  'nx-jwt-s3cr3t-k3y-do-not-share-2024');
+
+  [3] Satır 11:
+      Eşleşen: define('admin_email', '[EMAIL_1]');
+  Bağlam:
+      define('db_user',     'admin');
+      define('db_pass',     'admin@nexora2024!');
+      define('admin_email', '[EMAIL_1]');
+      define('secret_key',  'nx-jwt-s3cr3t-k3y-do-not-share-2024');
+      
+
+  [4] Satır 30:
+      Eşleşen: 'bind_dn'  => 'cn=admin,dc=nexora,dc=internal',
+  Bağlam:
+      $ldap_config = [
+          'host'     => 'ldap://ldap.nexora.internal',
+          'bind_dn'  => 'cn=admin,dc=nexora,dc=internal',
+          'password' => 'ldap@nexora24',
+      ];
+
+  [5] Satır 34:
+      Eşleşen: // yedek admin hesabı
+  Bağlam:
+      ];
+      
+      // yedek admin hesabı
+      $fallback_admin = [
+          'user' => 'nexora_root',
+
+======================================================================
+
+----------------------------------------------------------------------
+DİJİTAL KANIT DOSYASI: file_d966a47d.js
+----------------------------------------------------------------------
+Dosya Boyutu: 1,293 bytes
+Son Değiştirilme: 2026-03-07 19:34:32
+Oluşturulma Tarihi: 2026-03-07 16:27:44
+SHA-256 Hash (Adli Bütünlük): bf2a65f94d4be53fca93505d90334f95392dc9c662431a2ab38b7539b70c5c2f
+Tespit Edilen PII Türleri: email, credit_card, url
+
+BULUNAN DİJİTAL KANITLAR:
+  🔍 admin: 7 eşleşme
+  🔍 password: 2 eşleşme
+
+KANIT BAĞLAMLARI (PII MASKELENMİŞ):
+
+  [1] Satır 6:
+      Eşleşen: const admin_user = "superadmin";
+  Bağlam:
+      const api_base   = "[PII_URL_3]";
+      const api_key    = "nx-api-4a7f2c9b1e3d6f8a0c2e4b6d8f0a2c4e";
+      const admin_user = "superadmin";
+      const admin_pass = "nx$uper2024";
+      
+
+  [2] Satır 7:
+      Eşleşen: const admin_pass = "nx$uper2024";
+  Bağlam:
+      const api_key    = "nx-api-4a7f2c9b1e3d6f8a0c2e4b6d8f0a2c4e";
+      const admin_user = "superadmin";
+      const admin_pass = "nx$uper2024";
+      
+      // sabit kodlanmış test kullanıcısı — prod'a çikmayabi̇li̇r
+
+  [3] Satır 16:
+      Eşleşen: async function loginadmin() {
+  Bağlam:
+      };
+      
+      async function loginadmin() {
+        const response = await fetch(`${api_base}/auth/login`, {
+          method: "post",
+
+  [4] Satır 24:
+      Eşleşen: username: admin_user,
+  Bağlam:
+          },
+          body: json.stringify({
+            username: admin_user,
+            password: admin_pass,
+          }),
+
+  [5] Satır 25:
+      Eşleşen: password: admin_pass,
+  Bağlam:
+          body: json.stringify({
+            username: admin_user,
+            password: admin_pass,
+          }),
+        });
+
+======================================================================
+
+TRACEWORDS ANALİZ ÖZETİ
+==============================
+Toplam Dijital Kanıt: 43
+Kanıt İçeren Dosya Sayısı: 7
+
+GDPR/CCPA UYUMLULUK BİLDİRİMİ
+==============================
+Bu rapor TraceWords v5.0 tarafından veri gizliliği standartlarına uygun hazırlanmıştır.
