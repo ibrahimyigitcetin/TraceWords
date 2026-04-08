@@ -754,40 +754,40 @@ def process_large_file_chunked(filepath: str, keywords: List[str],
             logging.error(f"Geçersiz byte(lar) büyük dosyada ({filepath}): {e}")
             raise
 
-            # Trailing phase: process lines remaining in the buffer after the last centered line
-            # To preserve context, we don't pop until we check the matches
-            start_no = (i + 1) - len(lines_buffer) + 1
-            trailing_idx = (last_centered_no + 1) - start_no if last_centered_no > 0 else 0
+        # Trailing phase: process lines remaining in the buffer after the last centered line
+        # To preserve context, we don't pop until we check the matches
+        start_no = (i + 1) - len(lines_buffer) + 1
+        trailing_idx = (last_centered_no + 1) - start_no if last_centered_no > 0 else 0
+        
+        while trailing_idx < len(lines_buffer):
+            trailing_line = lines_buffer[trailing_idx]
+            trailing_line_no = start_no + trailing_idx
+            context_block = "".join(lines_buffer)
             
-            while trailing_idx < len(lines_buffer):
-                trailing_line = lines_buffer[trailing_idx]
-                trailing_line_no = start_no + trailing_idx
-                context_block = "".join(lines_buffer)
-                
-                for kw_str, pattern in patterns:
-                    if safe_regex_search(pattern, trailing_line):
-                        matches[kw_str] = matches.get(kw_str, 0) + 1
-                        
-                        masked_context = context_block
-                        if privacy_logger and PRIVACY_SETTINGS["enable_pii_masking"]:
-                            pii_detected = detect_pii(context_block)
-                            if pii_detected:
-                                masked_context = mask_pii(context_block, pii_detected, session_id, privacy_logger)
-                        
-                        try:
-                            highlighted_line = pattern.sub(r"[bold red]\g<0>[/bold red]", trailing_line.strip())
-                            highlighted_context = pattern.sub(r"[bold red]\g<0>[/bold red]", masked_context)
-                        except re.error:
-                            highlighted_line = trailing_line.strip()
-                            highlighted_context = masked_context
-                        
-                        all_contexts.append({
-                            'line_number': trailing_line_no,
-                            'context': highlighted_context,
-                            'matched_line': highlighted_line
-                        })
-                
-                trailing_idx += 1
+            for kw_str, pattern in patterns:
+                if safe_regex_search(pattern, trailing_line):
+                    matches[kw_str] = matches.get(kw_str, 0) + 1
+                    
+                    masked_context = context_block
+                    if privacy_logger and PRIVACY_SETTINGS["enable_pii_masking"]:
+                        pii_detected = detect_pii(context_block)
+                        if pii_detected:
+                            masked_context = mask_pii(context_block, pii_detected, session_id, privacy_logger)
+                    
+                    try:
+                        highlighted_line = pattern.sub(r"[bold red]\g<0>[/bold red]", trailing_line.strip())
+                        highlighted_context = pattern.sub(r"[bold red]\g<0>[/bold red]", masked_context)
+                    except re.error:
+                        highlighted_line = trailing_line.strip()
+                        highlighted_context = masked_context
+                    
+                    all_contexts.append({
+                        'line_number': trailing_line_no,
+                        'context': highlighted_context,
+                        'matched_line': highlighted_line
+                    })
+            
+            trailing_idx += 1
 
     except UnicodeDecodeError:
         raise
@@ -920,12 +920,23 @@ def process_file(
                 'created': datetime.datetime.fromtimestamp(stat.st_ctime).strftime('%Y-%m-%d %H:%M:%S'),
                 'hash': file_hash,
                 'pii_types_detected': [], # Limited for chunked
-                'pii_masked': False
+                'pii_masked': bool(privacy_logger and PRIVACY_SETTINGS["enable_pii_masking"])
             }
             anonymized_filename = anonymize_file_path(display_name)
             return [ [anonymized_filename, matches, all_contexts, file_info, {}] ]
 
-    # v5.0: Pass the actual stream (file_obj) instead of the boolean flag (bytes_data)
+    # v5.0: Buffer stream before reading to ensure seekable hash calculation (BUG-21)
+    if file_obj is not None:
+        try:
+            raw_bytes = file_obj.read()
+            file_hash = hashlib.sha256(raw_bytes).hexdigest()
+            file_obj = io.BytesIO(raw_bytes)   # seekable buffer for read_file_content
+        except Exception as e:
+            logging.warning(f"Stream tampolanamadı ({original_name or filepath}): {e}")
+            file_hash = "Hash-Error"
+    else:
+        file_hash = None  # will be calculated below for physical files
+
     content = read_file_content(filepath, file_stream=file_obj, file_ext=ext)
     
     if not content:
@@ -941,16 +952,8 @@ def process_file(
     matches = {}
     all_contexts = []
     
-    # v5.0: Fix Hash Calculation for memory streams
-    if file_obj is not None:
-        try:
-            file_obj.seek(0)
-            file_hash = hashlib.sha256(file_obj.read()).hexdigest()
-            file_obj.seek(0) # Restore
-        except Exception as e:
-            logging.warning(f"Stream hash hesaplanamadı ({original_name or filepath}): {e}")
-            file_hash = "Hash-Error"
-    else:
+    # v5.0: Hash already calculated above for streams (BUG-21 fix)
+    if file_hash is None:
         file_hash = calculate_file_hash(filepath)
     
     if file_obj is not None:
@@ -1468,6 +1471,7 @@ def main():
     """Main program flow - v5.0: Hardened orchestration."""
     # Centralized logging initialization happens only once here if called directly
     audit_logger, privacy_logger = setup_logging()
+    logging.info("TraceWords v5.0 programı başlatıldı.")
     
     session_id = generate_session_id()
     args = parse_args()
@@ -1497,8 +1501,6 @@ def main():
         log_audit_event(audit_logger, "DIRECTORY_NOT_FOUND", args.directory, "user", session_id, "ERROR")
         return
     
-    # Keyword acquisition: Support both CLI and interactive
-    keywords = []
     # Keyword acquisition: Support both CLI and interactive
     keywords = []
     if args.keywords:
@@ -1590,6 +1592,7 @@ def main():
     if args.encrypt_logs:
         CONSOLE.print("[cyan]🔒 Log dosyaları şifreleniyor...[/cyan]")
         storage = GDPRCompliantStorage()
+        all_success = True
         for log_file in [CONFIG.LOG_FILE, CONFIG.AUDIT_LOG_FILE, CONFIG.PRIVACY_LOG_FILE]:
             if os.path.exists(log_file):
                 with open(log_file, 'rb') as lf:
@@ -1599,9 +1602,13 @@ def main():
                 if success and os.path.exists(enc_path):
                     secure_delete(log_file)
                 else:
+                    all_success = False
                     logging.error(f"Log şifrelenemedi, orijinal korunuyor: {log_file}")
                     CONSOLE.print(f"[red]Uyarı: {log_file} şifrelenemedi.[/red]")
-        CONSOLE.print("[green]✅ Loglar şifrelendi ve orijinalleri güvenli silindi.[/green]")
+        if all_success:
+            CONSOLE.print("[green]✅ Loglar şifrelendi ve orijinalleri güvenli silindi.[/green]")
+        else:
+            CONSOLE.print("[yellow]⚠ Bazı log dosyaları şifrelenemedi. Detaylar için log dosyasını inceleyin.[/yellow]")
 
 if __name__ == "__main__":
     welcome_panel = Panel(
@@ -1614,9 +1621,6 @@ if __name__ == "__main__":
     )
     CONSOLE.print(welcome_panel)
     CONSOLE.print(f"[dim]🕐 Başlangıç zamanı: {datetime.datetime.now().strftime('%H:%M:%S')}[/dim]")
-    
-    # v5.0: Log Program Start
-    logging.info("TraceWords v5.0 programı başlatıldı.")
     
     try:
         main()
